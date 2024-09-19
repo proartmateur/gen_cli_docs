@@ -1,0 +1,90 @@
+/* Light mode styles */
+:root,
+[data-theme='light'] {
+  --sl-color-bg: theme(backgroundImage.light-gradient);
+  --sl-color-bg-nav: theme(colors.topbar-light);
+  --sl-color-button: theme(backgroundImage.accent-gradient);
+  --sl-link-button-txt-color: black;
+  --sl-hero-title-text-shadow: #BE1A04 1px 0 0px;
+  --sl-hero-title-text-color: #0C0805;
+  --sl-color-white: #0C0805,
+}
+
+/* Dark mode styles */
+[data-theme='dark'] {
+  --sl-color-bg: theme(backgroundImage.dark-gradient);
+  --sl-color-bg-nav: theme(colors.topbar-dark);
+  --sl-color-button: theme(backgroundImage.accent-gradient);
+  --sl-link-button-txt-color: black;
+  --sl-hero-title-text-shadow: #BE1A04 1px 0 10px;
+  --sl-hero-title-text-color: #D6CCB8;
+  --sl-color-white: #FFFEED,
+}
+
+/* Apply the background to the body */
+body {
+  background-image: var(--sl-color-bg);
+  background-attachment: fixed; /* This keeps the gradient fixed while scrolling */
+}
+
+
+/* Additional styling for the top bar if needed */
+.sl-nav-wrapper, .header {
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important; /* for Safari */
+  background-color: rgba(var(--sl-color-gray-5), 0.5) !important;
+  border-bottom: 1px solid rgba(var(--sl-color-gray-5), 1) !important;
+}
+
+.sl-link-button.primary {
+  position: relative;
+  background: var(--sl-color-button);
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 16px #E1B61C;
+  padding: 10px 20px; /* Adjust as needed */
+  color: var(--sl-link-button-txt-color); /* Adjust text color as needed */
+  cursor: pointer;
+  overflow: hidden;
+  text-shadow: #FFFB2F 1px 0 8px;
+}
+
+.sl-link-button.primary:hover {
+  border: none;
+  border-radius: 4px;
+  box-shadow: inset 3px 3px 2px 0 rgba(19, 11, 4, 0.5);
+
+}
+
+.sl-link-button.primary::before {
+  content: "";
+  position: absolute;
+  border-radius: 4px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset -3px -3px 1px 0 rgba(19, 11, 4, 0.5);
+  pointer-events: none;
+}
+
+/* Target the hero title */
+.hero h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 6rem;
+  color: #CD782D; /* Tomato color, for example */
+  text-shadow: var(--sl-hero-title-text-shadow);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* You might also want to style the tagline */
+.hero .tagline {
+  font-size: 1.25rem;
+  color: var(--sl-hero-title-text-color); /* Steel Blue, for example */
+}
+
+
+
+
+

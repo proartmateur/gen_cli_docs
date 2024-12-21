@@ -75,12 +75,14 @@ body {
     box-shadow: inset -3px -3px 1px 0 rgba(19, 11, 4, 0.5);
     pointer-events: none;
 }
+    
 
 /* Target the hero title */
+
 .hero h1 {
     font-family: 'Archivo Black', sans-serif;
     font-size: 6rem;
-    color: #CD782D; /* Tomato color, for example */
+    color: #CD782D; 
     text-shadow: var(--sl-hero-title-text-shadow);
     letter-spacing: 0.05em;
     text-transform: uppercase;
